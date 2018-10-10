@@ -27,6 +27,7 @@ class HangmanGame {
 	}
 
 	public String getCurrentProgress() {
+		// initialize empty String to store our progress
 		String progress = "";
 		// enhanced For Loop
 		// use .toCharArray() to put answer into array, and then iterate through each element

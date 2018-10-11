@@ -27,20 +27,17 @@ public class ScrabblePlayer {
 	// Create a new method named getCountOfLetter that returns an int, 
 	// and requires a parameter of type char named letter. 
 	public int getCountOfLetter(char letter) {
-
-		// You'll need to use your skills to loop through each of the tiles, 
-		for (char letter : tiles.toCharArray()) {
-			// use an equality check, and then increment a counter if the tile and letter match
-			if (letter == ) {
-				// increment a counter if the tile and letter match
-			}
-		}
-
-		// Now in your new method, have it return a number representing the count of tiles that match the letter that was passed in to the method.
-
-		// For this task, just make it return 0
-		return 0;
-	}
-
+    // initialize counter
+    int count = 0;
+    // loop through each of the tiles
+    for (char maybe : tiles.toCharArray()) {
+      // use an equality check. is the letter passed into this method equal to the tile being examined in each iteration?
+      if (maybe == letter) {
+        //  increment a counter if the tile and letter match
+        count++;
+      }
+    }
+    return count;
+  }
 
 }

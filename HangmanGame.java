@@ -1,8 +1,10 @@
 // this class handles the game logic
 class HangmanGame {
+	public static final int MAX_MISSES = 7;
 	private String answer;
 	private String hits;
 	private String misses;
+
 	// constructor. requires answer
 	public HangmanGame(String answer) {
 		this.answer = answer;
@@ -24,6 +26,12 @@ class HangmanGame {
 			misses += letter;
 		}
 		return isHit;
+	}
+
+	// calculate remaining tries 
+	// public method, returns integer
+	public int getRemainingTries() {
+		return MAX_MISSES - misses.length();
 	}
 
 	public String getCurrentProgress() {

@@ -7,14 +7,35 @@ class HangmanGame {
 
 	// constructor. requires answer
 	public HangmanGame(String answer) {
-		this.answer = answer;
-		// initialize
+		// normalize answer using .toLowerCase
+		this.answer = answer.toLowerCase();
+		// initialize Strings for Hits and Misses
 		hits = "";
 		misses = "";
 	} 
 
-	// method 
+	// private method is only accessible to this Class
+	// method takes a char, and returns a char
+	private char normalizeGuess(char letter) {
+		// is it a letter? if not, throw an exception
+		if (! Character.isLetter(letter)) {
+			throw new IllegalArgumentException("A letter is required");
+		}
+		// normalize input 
+		letter = Character.toLowerCase(letter);
+		// has the letter already been guessed? e.g. is it in Misses or Hits? if so, throw an exception
+		if (misses.indexOf(letter) != -1 || hits.indexOf(letter) != -1) {
+			throw new IllegalArgumentException(letter + " has already been guessed");
+		}
+		return letter;
+	}
+
+
+	// Apply Guess method returns a boolean and takes a char 
 	public boolean applyGuess(char letter) {
+		// call private method that has validated and normalized the input
+		letter = normalizeGuess(letter);
+		
 		// is the letter in the answer?
 		boolean isHit = answer.indexOf(letter) != -1; 
 		// yes

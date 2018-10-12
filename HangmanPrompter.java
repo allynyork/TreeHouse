@@ -19,13 +19,31 @@ class HangmanPrompter {
 	public boolean promptForGuess() {
 		// new Scanner object
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Enter a letter:  ");
-		// use Scanner helper method to get input and store it in a String
-		String guessInput = scanner.nextLine();
-		// store the first character of the input as a char
-		char guess = guessInput.charAt(0);
-		// return answer from HangmanGame.applyGuess method that is going to take the char guess
-		return game.applyGuess(guess);
+		// declare variable outside of try block so that it is accessible
+		boolean isHit = false;
+		// new variable to keep track of state
+		boolean isAcceptable = false;
+		// do while loop. keep iterating through until we get acceptable input
+		do {
+			System.out.print("Enter a letter:  ");
+			// use Scanner helper method to get input and store it in a String
+			String guessInput = scanner.nextLine();
+			// store the first character of the input as a char
+			char guess = guessInput.charAt(0);
+
+			// try catch
+			try {
+		      // call applyGuess method from Game, which also normalizes the input and assign value to isHit variable
+			  isHit = game.applyGuess(guess);
+			  // and because the input was normalized, we know it is now acceptable
+			  isAcceptable = true;	
+			  // or if not, we iterate through our exception until we do have acceptable input
+			} catch(IllegalArgumentException iae) {
+				System.out.printf("%s. Please try again. %n",
+										 iae.getMessage());
+				}
+		} while(! isAcceptable);
+			return isHit;		
 	}
 
 	// method to display our progress

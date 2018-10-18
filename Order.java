@@ -21,8 +21,7 @@ class Order {
   }
 
   private String normalizeDiscountCode(String discountCode) {
-    this.discountCode = String.toUpperCase(discountCode);
-    return discountCode;
+    return discountCode.toUpperCase();
   }
 
   public void applyDiscountCode(String discountCode) {
@@ -35,8 +34,5 @@ class Order {
 // create a new private method named normalizeDiscountCode. 
 // it should take the discount code that is passed into the method and return the uppercase version.
 // Call it from the current applyDiscountCode method and set this.discountCode to the result.
-// normalize input 
-    letter = Character.toLowerCase(letter);
 
-// call private method that has validated and normalized the input
-    letter = normalizeGuess(letter);
+// task 2

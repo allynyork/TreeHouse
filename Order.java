@@ -20,11 +20,15 @@ class Order {
     return discountCode;
   }
 
+  // create a new private method named normalizeDiscountCode
+  // take the discount code that is passed into the method
   private String normalizeDiscountCode(String discountCode) {
+    // return the uppercase version
     return discountCode.toUpperCase();
   }
 
   public void applyDiscountCode(String discountCode) {
+    // Call it from the current applyDiscountCode method and set this.discountCode to the result
     this.discountCode = normalizeDiscountCode(discountCode);
   }
 

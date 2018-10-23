@@ -28,13 +28,11 @@ class HangmanPrompter {
 			System.out.print("Enter a letter:  ");
 			// use Scanner helper method to get input and store it in a String
 			String guessInput = scanner.nextLine();
-			// store the first character of the input as a char
-			char guess = guessInput.charAt(0);
 
 			// try catch
 			try {
 		      // call applyGuess method from Game, which also normalizes the input and assign value to isHit variable
-			  isHit = game.applyGuess(guess);
+			  isHit = game.applyGuess(guessInput);
 			  // and because the input was normalized, we know it is now acceptable
 			  isAcceptable = true;	
 			  // or if not, we iterate through our exception until we do have acceptable input

@@ -30,12 +30,23 @@ class HangmanGame {
 		return letter;
 	}
 
+	// overloaded Method takes String instead of char
+	public boolean applyGuess(String letters) {
+		// check length == 0, error
+		if (letters.length() == 0) {
+			throw new IllegalArgumentException("No letter found");
+		}
+		// what is the first character of the String? 
+		// return that char to our other applyGuess() that takes a char to use it's normalize and other logic
+		return applyGuess(letters.charAt(0));
+	}
+
 
 	// Apply Guess method returns a boolean and takes a char 
 	public boolean applyGuess(char letter) {
 		// call private method that has validated and normalized the input
 		letter = normalizeGuess(letter);
-		
+
 		// is the letter in the answer?
 		boolean isHit = answer.indexOf(letter) != -1; 
 		// yes

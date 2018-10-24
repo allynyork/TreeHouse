@@ -14,6 +14,11 @@ class HangmanGame {
 		misses = "";
 	} 
 
+	// getter for answer
+	public String getAnswer() {
+		return answer;
+	}
+
 	// private method is only accessible to this Class
 	// method takes a char, and returns a char
 	private char normalizeGuess(char letter) {
@@ -83,6 +88,13 @@ class HangmanGame {
 			progress += display;
 		}
 		return progress;
+	}
+
+	// method to determine if the game is won
+	public boolean isWon() {
+		// what is in our current progress? are there any remianing dashes?
+		// chain the methods together
+		return getCurrentProgress().indexOf('-') == -1;
 	}
 
 }

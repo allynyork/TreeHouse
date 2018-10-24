@@ -52,6 +52,18 @@ class HangmanPrompter {
 						game.getCurrentProgress());
 	}
 
+	// displayOutcome method that will be called by the Hangman class
+	public void displayOutcome() {
+		// if the game is won, Congratulations
+		if (game.isWon()) { 
+			System.out.printf("Congratulations! you won with %d tries remaining.%n",
+								game.getRemainingTries());
+		} else {
+			System.out.printf("Sorry, the was answer was %s/ %n", 
+								game.getAnswer());
+		}
+	}
+
 }
 
 // note to self, can Scanner go directly to char? or does it have to be a String first? 

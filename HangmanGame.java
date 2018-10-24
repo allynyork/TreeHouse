@@ -1,5 +1,5 @@
 // this class handles the game logic
-class HangmanGame {
+public class HangmanGame {
 	public static final int MAX_MISSES = 7;
 	private String answer;
 	private String hits;

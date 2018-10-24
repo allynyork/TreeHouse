@@ -1,7 +1,7 @@
 // import Scanner
 import java.util.Scanner;
 
-class HangmanPrompter {
+public class HangmanPrompter {
 	// this class handles the IO of the game
 
 	// needs to know about Game object
@@ -59,7 +59,7 @@ class HangmanPrompter {
 			System.out.printf("Congratulations! you won with %d tries remaining.%n",
 								game.getRemainingTries());
 		} else {
-			System.out.printf("Sorry, the was answer was %s/ %n", 
+			System.out.printf("Sorry, the was answer was %s: %n", 
 								game.getAnswer());
 		}
 	}

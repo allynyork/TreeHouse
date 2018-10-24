@@ -1,8 +1,17 @@
 public class Hangman {
 
 	public static void main(String[] args) {
+
+		// if the user doesn't provide a word to guess, message user and quit
+		if (args.length == 0) {
+			// prompt
+			System.out.println("Usage: java Hangman <answer>");
+			System.err.println("answer is required");
+			// quit
+			System.exit(1);
+		}
 		// create instance of game. and populate it with the answer
-		HangmanGame game = new HangmanGame("treehouse");
+		HangmanGame game = new HangmanGame(args[0]);
 
 		// make a HangmanPrompter object
 		HangmanPrompter prompter = new HangmanPrompter(game);

@@ -11,7 +11,7 @@ public class CowMain {
     Cow cow = new Cow("Larry");
     
     // TODO: 6. Finally, print out the name of your Cow object to make sure everything's working.
-    System.out.printf("Hello, I am a cow named %s %n", cow.getName());
+    console.printf("Hello, I am a cow named %s %n", cow.getName());
     
   }
 }

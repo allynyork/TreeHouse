@@ -10,9 +10,9 @@ public class Main {
 
     Forum forum = new Forum("Java");
     // TODO: pass in the first name and last name that are in the args parameter
-    User author = new User();
+    User author = new User(args[0], args[1]);
     // TODO: initialize the forum post with the user created above and a title and description of your choice
-    ForumPost post = new ForumPost();
+    ForumPost post = new ForumPost(author, "This title is a String", "This description is a String");
     forum.addPost(post);
 
 

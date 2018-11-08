@@ -3,6 +3,35 @@ public class Explore {
 	public static void main(String[] args) {
 		// create array literal
 		String[] friends = {"Ben", "Alena", "Pasan"};
+
+		int[][] scoreCards = {
+			{1, 2, 4, 2, 6, 5, 4, 3, 3, 2, 5, 7, 2, 7, 8, 4, 3, 2}, 
+			{2, 3, 5, 1, 1, 2, 3, 1, 1, 2, 4, 1, 3, 3, 2, 6, 3, 2}, 
+			{4, 4, 2, 1, 2, 2, 1, 4, 2, 2, 2, 3, 2, 5, 8, 1, 2, 2}
+		};
+
+		// pseudo code for planning
+		// for each friend
+		// use the Standard For Loop because we want access to the index 
+		for (int i = 0; i < friends.length; i++) {
+			// print their name
+			System.out.printf("%s %n---------------------%n", 
+								friends[i]);
+			// for each hole 
+			// nested For Loop 
+			for (int j = 0; j < scoreCards[i].length; j++) {
+				// print their score
+				System.out.printf("Hole #%d: %d %n", 
+									j + 1, 
+									scoreCards[i][j]);
+			}
+		}
+
+		System.out.printf("%n");
+
+		System.out.printf("%n");
+		
+
 		// enhanced For Loop, works well for iterating over all elements in an array
 		System.out.println("This is an example of an Enhanced For Loop");
 		for (String friend : friends) {
